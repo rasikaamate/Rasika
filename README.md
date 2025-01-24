@@ -1,2 +1,2 @@
 # Rasika
-This is m first Git Repository.
+This is my first Git Repository.
