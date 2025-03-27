@@ -1,0 +1,131 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>org.example</groupId>\r\n    <artifactId>SeleniumPractice</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n\r\n    <properties>\r\n        <maven.compiler.source>17</maven.compiler.source>\r\n        <maven.compiler.target>17</maven.compiler.target>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->\r\n        <dependency>\r\n            <groupId>org.seleniumhq.selenium</groupId>\r\n            <artifactId>selenium-java</artifactId>\r\n            <version>3.141.59</version>\r\n        </dependency>\r\n\r\n        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->\r\n        <dependency>\r\n            <groupId>io.github.bonigarcia</groupId>\r\n            <artifactId>webdrivermanager</artifactId>\r\n            <version>5.9.2</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>ru.yandex.qatools.ashot</groupId>\r\n            <artifactId>ashot</artifactId>\r\n            <version>1.5.4</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>com.codeborne</groupId>\r\n            <artifactId>phantomjsdriver</artifactId>\r\n            <version>1.4.1</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.testng</groupId>\r\n            <artifactId>testng</artifactId>\r\n            <version>7.4.0</version>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 3bde61c0cb7c2e0a31dae0116f0db7d6b1523bf1)
++++ b/pom.xml	(date 1742316717738)
+@@ -9,8 +9,8 @@
+     <version>1.0-SNAPSHOT</version>
+ 
+     <properties>
+-        <maven.compiler.source>17</maven.compiler.source>
+-        <maven.compiler.target>17</maven.compiler.target>
++        <maven.compiler.source>1.8</maven.compiler.source>
++        <maven.compiler.target>1.8</maven.compiler.target>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     </properties>
+ 
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 3bde61c0cb7c2e0a31dae0116f0db7d6b1523bf1)
++++ b/.idea/misc.xml	(date 1742316717863)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: GitHub.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/GitHub.java b/GitHub.java
+new file mode 100644
+--- /dev/null	(date 1742316717425)
++++ b/GitHub.java	(date 1742316717425)
+@@ -0,0 +1,2 @@
++public class GitHub {
++}
+Index: src/main/java/practice/Locators.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package practice;\r\n\r\nimport io.github.bonigarcia.wdm.WebDriverManager;\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.openqa.selenium.chrome.ChromeDriver;\r\nimport org.openqa.selenium.edge.EdgeDriver;\r\n\r\npublic class Locators {\r\n    public static void main(String[] args) throws InterruptedException {\r\n\r\n        WebDriverManager.edgedriver().setup();\r\n        WebDriver driver = new EdgeDriver();\r\n        driver.get(\"https://www.calculator.net/percent-calculator.html\");\r\n\r\n        Thread.sleep(2000);\r\n\r\n//        ******** ID ********\r\n//        System.out.println(driver.findElement(By.id(\"breadcrumbs\")).getText());\r\n//\r\n//        driver.findElement(By.id(\"cpar1\")).sendKeys(\"ABC\");\r\n//        Thread.sleep(2000);\r\n//        driver.findElement(By.id(\"cpar1\")).sendKeys(\"1000\");\r\n//        Thread.sleep(2000);\r\n//        driver.findElement(By.id(\"cpar2\")).sendKeys(\"120\");\r\n//        Thread.sleep(2000);\r\n//        driver.findElement(By.id(\"cpar2\")).clear();\r\n//        Thread.sleep(2000);\r\n//        driver.findElement(By.id(\"cpar2\")).sendKeys(\"999\");\r\n//        Thread.sleep(2000);\r\n\r\n\r\n//        ******** name ********\r\n//\t\tdriver.findElement(By.name(\"c21par1\")).sendKeys(\"10\");\r\n//\t\tThread.sleep(2000);\r\n//\t\tdriver.findElement(By.name(\"c21par2\")).sendKeys(\"120\");\r\n//\t\tThread.sleep(2000);\r\n//\t\tdriver.findElement(By.name(\"c21par2\")).clear();\r\n//\t\tThread.sleep(2000);\r\n\r\n//        ******** linkText ********\r\n//\t\tSystem.out.println(\"Link Tag : \" + driver.findElement(By.linkText(\"Scientific\")).getTagName());\r\n//        System.out.println(\"Link Text : \" + driver.findElement(By.linkText(\"Scientific\")).getText());\r\n//\r\n//\t\tSystem.out.println(\"Link Tag : \" + driver.findElement(By.linkText(\"Scient\")).getTagName());  //Provide full string\r\n//        System.out.println(\"Link Text :\" + driver.findElement(By.linkText(\"scientific\")).getText());  //Provide correct casing\r\n\r\n\r\n//        ******** partialLinkText ********\r\n//\t\t  System.out.println(\"Partial Link Text : \" + driver.findElement(By.partialLinkText(\"Scient\")).getText());\r\n//        System.out.println(\"Partial Link Text : \" + driver.findElement(By.partialLinkText(\"scient\")).getText());\r\n//        System.out.println(\"Partial Link Text : \" + driver.findElement(By.partialLinkText(\"tific\")).getText());\r\n//        System.out.println(\"Partial Link Text : \" + driver.findElement(By.partialLinkText(\"ient\")).getText());\r\n//\r\n//        System.out.println(\"Partial Link Text : \" + driver.findElement(By.partialLinkText(\"cieifi\")).getText());\r\n\r\n\r\n\r\n//        ******** tag ********\r\n//        System.out.println(driver.findElement(By.tagName(\"p\")).getText());\r\n\r\n\r\n//        ******** className ********\r\n//\t\tdriver.findElement(By.className(\"inlong\")).sendKeys(\"Prashant\");\r\n\r\n\r\n//      ******** xpath ********\r\n//\t\tdriver.findElement(By.xpath(\"//*[@id='cpar1']\")).sendKeys(\"10\");\r\n//\t\tThread.sleep(5000);\r\n//\t\tdriver.findElement(By.xpath(\"/html/body/div[3]/div[1]/form[1]/table/tbody/tr[1]/td/input[2]\")).sendKeys(\"120\");\r\n//\t\tThread.sleep(5000);\r\n//\t\tdriver.findElement(By.xpath(\"/html/body/div[3]/div[1]/form[1]/table/tbody/tr[1]/td/input[2]\")).clear();\r\n//\t\tThread.sleep(5000);\r\n//\r\n//      ******** cssSelector ********\r\n//        driver.findElement(By.cssSelector(\"input[name='cpar1']\")).sendKeys(\"10\");   // tag[Attribute='value']\r\n//        Thread.sleep(5000);\r\n//        driver.findElement(By.cssSelector(\"input#cpar2\")).sendKeys(\"120\");\r\n//        Thread.sleep(5000);\r\n//        driver.findElement(By.cssSelector(\"input[name='cpar2']\")).clear();\r\n//        Thread.sleep(5000);\r\n\r\n\r\n\r\n\r\n//        ******** findElements ********\r\n//        System.out.println(\"Size : \" + driver.findElements(By.tagName(\"a\")).size());\r\n//        System.out.println(\"Text : \" + driver.findElements(By.tagName(\"a\")).get(0).getAttribute(\"href\"));\r\n//        System.out.println(\"Text : \" + driver.findElement(By.tagName(\"a\")).getAttribute(\"href\"));\r\n\r\n//        System.out.println(\"Size : \" + driver.findElements(By.tagName(\"a1\")).size());\r\n//        System.out.println(\"Text : \" + driver.findElements(By.tagName(\"a\")).get(0).getText());\r\n//        System.out.println(\"Text : \" + driver.findElement(By.tagName(\"a1\")).getText());\r\n\r\n\r\n//     ******** findElements practice ********\r\n\r\n        //Print text from all hyperlinks / paragraph tag\r\n\r\n//        int count = driver.findElements(By.tagName(\"a\")).size();\r\n//        for(int i=0;i<count;i++){\r\n//            System.out.println(i + \"th hyperlinks text is \" + driver.findElements(By.tagName(\"a\")).get(i).getText());\r\n//        }\r\n\r\n//        List<WebElement> listByTag = driver.findElements(By.tagName(\"a\"));\r\n//        System.out.println(\"List of tag\");\r\n//        int i=0;\r\n//        for(WebElement element : listByTag) {\r\n//            System.out.println(++i + \"-----\" +element.getText());\r\n//        }\r\n//        System.out.println(\"List size is : \" + listByTag.size());\r\n//        System.out.println(\"10th element ----- \" +listByTag.get(9).getText());\r\n\r\n//\r\n//        for(WebElement element : driver.findElements(By.tagName(\"a\"))) {\r\n//            System.out.println(element.getText());\r\n//        }\r\n\r\n//        List<WebElement> listByTag = driver.findElements(By.tagName(\"a\"));\r\n//        ListIterator list_it= listByTag.listIterator();\r\n//        while (list_it.hasNext()){\r\n//            System.out.println((list_it.next().toString()));\r\n//        }\r\n\r\n\r\n\r\n\r\n//        System.out.println(\"Text is \" + driver.findElement(By.className(\"flsjhfdlishdf\")).getText());\r\n//        System.out.println(\"Size of list \" + driver.findElements(By.className(\"flsjhfdlishdf\")).size());\r\n\r\n        Thread.sleep(2000);\r\n\r\n        driver.close();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/practice/Locators.java b/src/main/java/practice/Locators.java
+--- a/src/main/java/practice/Locators.java	(revision 3bde61c0cb7c2e0a31dae0116f0db7d6b1523bf1)
++++ b/src/main/java/practice/Locators.java	(date 1742316718175)
+@@ -1,10 +1,15 @@
+ package practice;
+ 
+ import io.github.bonigarcia.wdm.WebDriverManager;
++import org.openqa.selenium.By;
+ import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.chrome.ChromeDriver;
+ import org.openqa.selenium.edge.EdgeDriver;
+ 
++import java.util.List;
++import java.util.ListIterator;
++
+ public class Locators {
+     public static void main(String[] args) throws InterruptedException {
+ 
+@@ -12,7 +17,7 @@
+         WebDriver driver = new EdgeDriver();
+         driver.get("https://www.calculator.net/percent-calculator.html");
+ 
+-        Thread.sleep(2000);
++//        Thread.sleep(2000);
+ 
+ //        ******** ID ********
+ //        System.out.println(driver.findElement(By.id("breadcrumbs")).getText());
+@@ -39,7 +44,7 @@
+ 
+ //        ******** linkText ********
+ //		System.out.println("Link Tag : " + driver.findElement(By.linkText("Scientific")).getTagName());
+-//        System.out.println("Link Text : " + driver.findElement(By.linkText("Scientific")).getText());
++//       System.out.println("Link Text : " + driver.findElement(By.linkText("Scientific")).getText());
+ //
+ //		System.out.println("Link Tag : " + driver.findElement(By.linkText("Scient")).getTagName());  //Provide full string
+ //        System.out.println("Link Text :" + driver.findElement(By.linkText("scientific")).getText());  //Provide correct casing
+@@ -84,7 +89,7 @@
+ 
+ //        ******** findElements ********
+ //        System.out.println("Size : " + driver.findElements(By.tagName("a")).size());
+-//        System.out.println("Text : " + driver.findElements(By.tagName("a")).get(0).getAttribute("href"));
++ //       System.out.println("Text : " + driver.findElements(By.tagName("a")).get(0).getAttribute("href"));
+ //        System.out.println("Text : " + driver.findElement(By.tagName("a")).getAttribute("href"));
+ 
+ //        System.out.println("Size : " + driver.findElements(By.tagName("a1")).size());
+@@ -109,7 +114,7 @@
+ //        }
+ //        System.out.println("List size is : " + listByTag.size());
+ //        System.out.println("10th element ----- " +listByTag.get(9).getText());
+-
++//
+ //
+ //        for(WebElement element : driver.findElements(By.tagName("a"))) {
+ //            System.out.println(element.getText());
+@@ -120,10 +125,11 @@
+ //        while (list_it.hasNext()){
+ //            System.out.println((list_it.next().toString()));
+ //        }
+-
+-
+-
+-
++//
++//
++//
++//
++//
+ //        System.out.println("Text is " + driver.findElement(By.className("flsjhfdlishdf")).getText());
+ //        System.out.println("Size of list " + driver.findElements(By.className("flsjhfdlishdf")).size());
+ 
